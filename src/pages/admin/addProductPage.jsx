@@ -66,7 +66,7 @@ export default function AddProductPage(){
             })
 
         }catch(e){
-            console.log(e)✏️
+            console.log(e)
         }
 
     }
