@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { sampleProducts } from "../../assets/sampleData"
 import axios from "axios"
+import { Link } from "react-router-dom"
 
 export default function AdminProductsPage(){
 
@@ -17,60 +18,61 @@ export default function AdminProductsPage(){
 
     
     return(
-        <div className="w-full h-full max-h-full overflow-y-scroll">
-        <table className="w-full text-center">
-            <thead>
-                <tr>
-                    <th>Product Id</th>
-                    <th>Name</th>
-                    <th>Image</th>
-                    <th>Labelled Price</th>
-                    <th>Price</th>
-                    <th>Stock</th>
-                </tr>
-            </thead>
-            <tbody>
-                {/* <tr>
-                    <td>COSM24001a</td>
-                    <td>Charcoal Face Mask</td>
-                    <td><img src="https://example.com/images/charcoal_mask.jpg" className="w-[50px] h-[50px]" /></td>
-                    <td>20</td>
-                    <td>16.75</td>
-                    <td>60</td>
-                </tr>
-                <tr>
-                    <td>COSM24001a</td>
-                    <td>Charcoal Face Mask</td>
-                    <td><img src="https://example.com/images/charcoal_mask.jpg" className="w-[50px] h-[50px]" /></td>
-                    <td>20</td>
-                    <td>16.75</td>
-                    <td>60</td>
-                </tr> */}
+        <div className="w-full h-full max-h-full overflow-y-scroll bg-yellow-500 relative">
+            <Link to="/admin/add-product" className="absolute text-xl cursor-pointer bottom-5 right-5 bg-green-600 text-white font-bold py-2 px-4 rounded text-center flex justify-center items-center">+</Link>
+            <table className="w-full text-center">
+                <thead>
+                    <tr>
+                        <th>Product Id</th>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Labelled Price</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {/* <tr>
+                        <td>COSM24001a</td>
+                        <td>Charcoal Face Mask</td>
+                        <td><img src="https://example.com/images/charcoal_mask.jpg" className="w-[50px] h-[50px]" /></td>
+                        <td>20</td>
+                        <td>16.75</td>
+                        <td>60</td>
+                    </tr>
+                    <tr>
+                        <td>COSM24001a</td>
+                        <td>Charcoal Face Mask</td>
+                        <td><img src="https://example.com/images/charcoal_mask.jpg" className="w-[50px] h-[50px]" /></td>
+                        <td>20</td>
+                        <td>16.75</td>
+                        <td>60</td>
+                    </tr> */}
 
-                {
-                    products.map(
-                        (item,index)=>{
-                        // console.log("Hi")
-                        return(
-                            // <span>Hi</span>
-                            // <span>{item.productId}</span>
-                            // <span key={index}>{index}</span>
+                    {
+                        products.map(
+                            (item,index)=>{
+                            // console.log("Hi")
+                            return(
+                                // <span>Hi</span>
+                                // <span>{item.productId}</span>
+                                // <span key={index}>{index}</span>
 
-                            <tr key={index}>
-                                <td>{item.productId}</td>
-                                <td>{item.name}</td>
-                                <td><img src={item.images[0]} className="w-[50px] h-[50px]" /></td>
-                                <td>{item.labelledPrice}</td>
-                                <td>{item.price}</td>
-                                <td>{item.stock}</td>
-                            </tr>
+                                <tr key={index}>
+                                    <td>{item.productId}</td>
+                                    <td>{item.name}</td>
+                                    <td><img src={item.images[0]} className="w-[50px] h-[50px]" /></td>
+                                    <td>{item.labelledPrice}</td>
+                                    <td>{item.price}</td>
+                                    <td>{item.stock}</td>
+                                </tr>
 
-                        )
-                    })
-                }
+                            )
+                        })
+                    }
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
         </div>
     )
 }
