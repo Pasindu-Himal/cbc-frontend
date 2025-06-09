@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import ProductCard from "../../components/productCard";
 
+
 export default function ProductPage(){
 
     const [products, setProducts] = useState([])
