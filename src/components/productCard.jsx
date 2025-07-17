@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 export default function ProductCard({product}){
 
@@ -56,7 +56,7 @@ export default function ProductCard({product}){
               : "bg-gray-400 cursor-not-allowed"
           }`}
         >
-          {product.isAvailable ? "Add to Cart" : "Unavailable"}
+          {product.isAvailable ? "Buy Now" : "Unavailable"}
         </button>
       </div>
     </Link>
